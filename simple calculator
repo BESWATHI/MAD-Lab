@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     addition(data);
                 }
-                else if(data.contains("="))
+                else if(data.contains("-"))
                 {
                     subtraction(data);
                 }
