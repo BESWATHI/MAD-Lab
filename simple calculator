@@ -390,13 +390,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     multiplication(data);
                 }
+                else if(data.contains("-"))
+                {
+                    subtraction(data);
+                }
                 else if(data.contains("+"))
                 {
                     addition(data);
                 }
-                else if(data.contains("-"))
+                else if(data.contains("="))
                 {
-                    subtraction(data);
+                    equals(data);
                 }
             }catch(Exception e){
                 displayInvalidMessage("Invalid input");
