@@ -1,3 +1,4 @@
+//xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,6 +18,7 @@
         app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/phone_number_id"
         android:layout_width="wrap_content"
@@ -25,10 +27,11 @@
         android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="phone"
+        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_header_id" />
     <Button
-        android:id="@+id/delete_btn_id"
+        android:id="@+id/btn_del"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -38,7 +41,7 @@
         app:layout_constraintStart_toEndOf="@+id/phone_number_id"
         app:layout_constraintTop_toBottomOf="@+id/main_header_id" />
     <Button
-        android:id="@+id/one_btn_id"
+        android:id="@+id/btn_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -47,43 +50,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phone_number_id" />
     <Button
-        android:id="@+id/two_btn_id"
+        android:id="@+id/btn_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="64dp"
         android:text="2"
-        app:layout_constraintStart_toEndOf="@+id/one_btn_id"
+        app:layout_constraintStart_toEndOf="@+id/btn_1"
         app:layout_constraintTop_toBottomOf="@+id/phone_number_id" />
     <Button
-        android:id="@+id/three_btn_id"
+        android:id="@+id/btn_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="64dp"
         android:text="3"
-        app:layout_constraintStart_toEndOf="@+id/two_btn_id"
+        app:layout_constraintStart_toEndOf="@+id/btn_2"
         app:layout_constraintTop_toBottomOf="@+id/phone_number_id" />
     <Button
-        android:id="@+id/four_btn_id"
+        android:id="@+id/btn_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="48dp"
         android:text="4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/one_btn_id" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_1" />
     <Button
-        android:id="@+id/five_btn_id"
+        android:id="@+id/btn_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="48dp"
         android:text="5"
-        app:layout_constraintStart_toEndOf="@+id/four_btn_id"
-        app:layout_constraintTop_toBottomOf="@+id/two_btn_id" />
+        app:layout_constraintStart_toEndOf="@+id/btn_4"
+        app:layout_constraintTop_toBottomOf="@+id/btn_2" />
     <Button
-        android:id="@+id/six_btn_id"
+        android:id="@+id/btn_6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -91,28 +94,28 @@
         android:text="6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.302"
-        app:layout_constraintStart_toEndOf="@+id/five_btn_id"
-        app:layout_constraintTop_toBottomOf="@+id/three_btn_id" />
+        app:layout_constraintStart_toEndOf="@+id/btn_5"
+        app:layout_constraintTop_toBottomOf="@+id/btn_3" />
     <Button
-        android:id="@+id/seven_btn_id"
+        android:id="@+id/btn_7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="40dp"
         android:text="7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/four_btn_id" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_4" />
     <Button
-        android:id="@+id/eight_btn_id"
+        android:id="@+id/btn_8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="40dp"
         android:text="8"
-        app:layout_constraintStart_toEndOf="@+id/seven_btn_id"
-        app:layout_constraintTop_toBottomOf="@+id/five_btn_id" />
+        app:layout_constraintStart_toEndOf="@+id/btn_7"
+        app:layout_constraintTop_toBottomOf="@+id/btn_5" />
     <Button
-        android:id="@+id/nine_btn_id"
+        android:id="@+id/btn_9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -120,62 +123,62 @@
         android:text="9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.302"
-        app:layout_constraintStart_toEndOf="@+id/eight_btn_id"
-        app:layout_constraintTop_toBottomOf="@+id/six_btn_id" />
+        app:layout_constraintStart_toEndOf="@+id/btn_8"
+        app:layout_constraintTop_toBottomOf="@+id/btn_6" />
     <Button
-        android:id="@+id/star_btn_id"
+        android:id="@+id/btn_star"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="32dp"
         android:text="*"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seven_btn_id" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_7" />
     <Button
-        android:id="@+id/zero_btn_id"
+        android:id="@+id/btn_zero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="32dp"
         android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/star_btn_id"
-        app:layout_constraintTop_toBottomOf="@+id/eight_btn_id" />
+        app:layout_constraintStart_toEndOf="@+id/btn_star"
+        app:layout_constraintTop_toBottomOf="@+id/btn_8" />
     <Button
-        android:id="@+id/hash_btn_id"
+        android:id="@+id/btn_hash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="#"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toEndOf="@+id/zero_btn_id"
-        app:layout_constraintTop_toBottomOf="@+id/nine_btn_id" />
+        app:layout_constraintStart_toEndOf="@+id/btn_zero"
+        app:layout_constraintTop_toBottomOf="@+id/btn_9" />
     <Button
-        android:id="@+id/call_btn_id"
+        android:id="@+id/btn_call"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:text="CALL"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/star_btn_id"
+        app:layout_constraintTop_toBottomOf="@+id/btn_star"
         app:layout_constraintVertical_bias="0.382" />
     <Button
-        android:id="@+id/save_btn_id"
+        android:id="@+id/btn_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SAVE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toEndOf="@+id/call_btn_id"
-        app:layout_constraintTop_toBottomOf="@+id/zero_btn_id"
+        app:layout_constraintStart_toEndOf="@+id/btn_call"
+        app:layout_constraintTop_toBottomOf="@+id/btn_zero"
         app:layout_constraintVertical_bias="0.382" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
+//java
 
-  //java
-  package com.example.callnsave;
+package com.example.callnsave;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
@@ -185,52 +188,51 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button oneBtn, twoBtn, threeBtn, fourBtn, fiveBtn;
-    Button sixBtn, sevenBtn, eightBtn, nineBtn, zeroBtn;
-    Button starBtn, hashBtn;
-    Button delBtn, callBtn, saveBtn;
+    Button Btnone, Btntwo, Btnthree,Btnfour,Btnfive,Btnsix,Btnseven,Btneight,Btnnine,Btnzero;
+    Button Btnstar, Btnhash;
+    Button Btndel, Btncall, Btnsave;
     EditText phoneNumber;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        oneBtn = (Button) findViewById(R.id.one_btn_id);
-        oneBtn.setOnClickListener(this);
-        twoBtn = (Button) findViewById(R.id.two_btn_id);
-        twoBtn.setOnClickListener(this);
-        threeBtn = (Button) findViewById(R.id.three_btn_id);
-        threeBtn.setOnClickListener(this);
-        fourBtn = (Button) findViewById(R.id.four_btn_id);
-        fourBtn.setOnClickListener(this);
-        fiveBtn = (Button) findViewById(R.id.five_btn_id);
-        fiveBtn.setOnClickListener(this);
-        sixBtn = (Button) findViewById(R.id.six_btn_id);
-        sixBtn.setOnClickListener(this);
-        sevenBtn = (Button) findViewById(R.id.seven_btn_id);
-        sevenBtn.setOnClickListener(this);
-        eightBtn = (Button) findViewById(R.id.eight_btn_id);
-        eightBtn.setOnClickListener(this);
-        nineBtn = (Button) findViewById(R.id.nine_btn_id);
-        nineBtn.setOnClickListener(this);
-        zeroBtn = (Button) findViewById(R.id.zero_btn_id);
-        zeroBtn.setOnClickListener(this);
-        delBtn = (Button) findViewById(R.id.delete_btn_id);
-        delBtn.setOnClickListener(this);
-        callBtn = (Button) findViewById(R.id.call_btn_id);
-        callBtn.setOnClickListener(this);
-        saveBtn = (Button) findViewById(R.id.save_btn_id);
-        saveBtn.setOnClickListener(this);
-        starBtn = (Button) findViewById(R.id.star_btn_id);
-        starBtn.setOnClickListener(this);
-        hashBtn = (Button) findViewById(R.id.hash_btn_id);
-        hashBtn.setOnClickListener(this);
+        Btnone = (Button) findViewById(R.id.btn_1);
+        Btnone.setOnClickListener(this);
+        Btntwo = (Button) findViewById(R.id.btn_2);
+        Btntwo.setOnClickListener(this);
+        Btnthree = (Button) findViewById(R.id.btn_3);
+        Btnthree.setOnClickListener(this);
+        Btnfour = (Button) findViewById(R.id.btn_4);
+        Btnfour.setOnClickListener(this);
+        Btnfive = (Button) findViewById(R.id.btn_5);
+        Btnfive.setOnClickListener(this);
+        Btnsix = (Button) findViewById(R.id.btn_6);
+        Btnsix.setOnClickListener(this);
+        Btnseven = (Button) findViewById(R.id.btn_7);
+        Btnseven.setOnClickListener(this);
+        Btneight = (Button) findViewById(R.id.btn_8);
+        Btneight.setOnClickListener(this);
+        Btnnine = (Button) findViewById(R.id.btn_9);
+        Btnnine.setOnClickListener(this);
+        Btnzero = (Button) findViewById(R.id.btn_zero);
+        Btnzero.setOnClickListener(this);
+        Btndel = (Button) findViewById(R.id.btn_del);
+        Btndel.setOnClickListener(this);
+        Btncall = (Button) findViewById(R.id.btn_call);
+        Btncall.setOnClickListener(this);
+        Btnsave = (Button) findViewById(R.id.btn_save);
+        Btnsave.setOnClickListener(this);
+        Btnstar = (Button) findViewById(R.id.btn_star);
+        Btnstar.setOnClickListener(this);
+        Btnhash = (Button) findViewById(R.id.btn_hash);
+        Btnhash.setOnClickListener(this);
         phoneNumber = findViewById(R.id.phone_number_id);
         phoneNumber.setText("");
     }
     @Override
     public void onClick(View view) {
         Button btn = (Button)view;
-        if(view.equals(delBtn)) {
+        if(view.equals(Btndel)) {
             String phoneNum = phoneNumber.getText().toString();
             if (phoneNum.length() > 0) {
                 phoneNumber.setText(phoneNum.substring(0, phoneNum.length()-1));
@@ -238,13 +240,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 phoneNumber.setText("");
             }
             phoneNumber.setSelection(phoneNumber.getText().toString().length());
-        } else if(view.equals(callBtn)) {
+        } else if(view.equals(Btncall)) {
             System.out.print("Call Button Pressed");
             String phoneNum = phoneNumber.getText().toString();
             Intent intent = new Intent(Intent.ACTION_DIAL);
             intent.setData(Uri.parse("tel:"+phoneNum));
             startActivity(intent);
-        } else if(view.equals(saveBtn)) {
+        } else if(view.equals(Btnsave)) {
             System.out.print("Save Button Pressed");
             String phoneNum = phoneNumber.getText().toString();
             Intent intent = new Intent(ContactsContract.Intents.Insert.ACTION);
@@ -257,4 +259,3 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 }
-  
