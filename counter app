@@ -62,6 +62,8 @@
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+   
+    //java
 package com.example.counterapp;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -74,75 +76,60 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.counterapp.R;
-
-import org.w3c.dom.ls.LSOutput;
-
-import java.sql.SQLOutput;
-
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
+public class MainActivity extends AppCompatActivity implements View.OnClickListener 
+{
     Button btnStart, btnStop;
-    TextView counterValue;
-
+    TextView counterApplication;
     public int count = 0;
     public boolean running = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnStart = (Button)findViewById(R.id.btn_start);
+        btnStart = findViewById(R.id.btn_start);
         btnStart.setOnClickListener(this);
-        btnStop = (Button) findViewById(R.id.btn_stop);
+        btnStop = findViewById(R.id.btn_stop);
         btnStop.setOnClickListener(this);
-        counterValue = (TextView)findViewById(R.id.txt_value);
-
+        counterApplication =(TextView)findViewById(R.id.txt_value);
     }
 
     @Override
-    public void onClick(View view) {
-        if(view.equals(btnStart))
-            counterStart();
-        else if(view.equals(btnStop))
-            counterStop();
+    public void onClick(View v) {
+        if (v.equals(btnStart))
+            startCounter();
+        else if (v.equals(btnStop))
+            stopCounter();
     }
-
-    private void counterStart() {
-        count = 0;
+    private void startCounter()
+    {
+        //count=0;
         running = true;
-        System.out.println("Start -> " + Thread.currentThread().getName());
-
         new MyCounter().start();
     }
 
-    private void counterStop() {
-        this.running = false;
+    private void stopCounter() {
+        running = false;
     }
 
     Handler handler = new Handler(Looper.getMainLooper()) {
-
         public void handleMessage(Message msg) {
-            counterValue.setText(String.valueOf(msg.what));
+            counterApplication.setText(String.valueOf(msg.what));
         }
     };
 
-
-    private class MyCounter extends Thread{
-        public void run(){
-            System.out.println("MyCounter -> " + Thread.currentThread().getName());
-
-            while(running)
-            {
+    private class MyCounter extends Thread {
+        public void run() {
+            while (running) {
                 count++;
                 handler.sendEmptyMessage(count);
-                try{
+                try {
                     Thread.sleep(1000);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                catch (Exception e)
-                {}
             }
         }
     }
 }
+
