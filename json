@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 }
 
 
-//views.xml
+//views.java
 
 package com.example.parse_xml_json;
 
@@ -229,12 +229,6 @@ public class ViewsDataActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
-
-
-
-
-
     private void parseXML() {
         InputStream inputStream = null;
         try {
