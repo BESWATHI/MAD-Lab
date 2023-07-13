@@ -48,6 +48,8 @@
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
+//java
+
 package com.example.texttospeech;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -61,8 +63,7 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener
-{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, TextToSpeech.OnInitListener {
     Button btnSpeak;
     EditText txtSpeak;
     TextToSpeech textToSpeech;
@@ -70,31 +71,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) 
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txtSpeak=(EditText)findViewById(R.id.edt_txt);
-        btnSpeak=(Button)findViewById(R.id.btn_speech);
-        textToSpeech=new TextToSpeech(getBaseContext(), new TextToSpeech.OnInitListener()
-        {
-            @Override
-            public void onInit(int status)
-            {
-                if(status!=TextToSpeech.ERROR)
-                {
-                    Toast.makeText(getBaseContext(),"SUCCESS",Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-        textToSpeech.setLanguage(Locale.UK);
+        txtSpeak = (EditText) findViewById(R.id.edt_txt);
+        btnSpeak = (Button) findViewById(R.id.btn_speech);
+        btnSpeak.setOnClickListener(this);
+        textToSpeech = new TextToSpeech(getBaseContext(), this);
+        textToSpeech.setLanguage(Locale.ENGLISH);
     }
-
-
-    public void onClick(View v) 
+    @Override
+    public void onClick(View v)
     {
         String text=txtSpeak.getText().toString();
         textToSpeech.speak(text,TextToSpeech.QUEUE_FLUSH,null);
     }
 
+    @Override
+    public void onInit(int status)
+    {
+        if(status!=TextToSpeech.ERROR)
+        {
+            Toast.makeText(getBaseContext(),"SUCCESS",Toast.LENGTH_LONG).show();
+        }
+
+    }
+
 }
+
+
+       
+
+  
