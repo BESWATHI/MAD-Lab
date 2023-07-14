@@ -49,7 +49,7 @@
         app:layout_constraintVertical_bias="0.313" />
 
     <EditText
-        android:id="@+id/txt_username"
+        android:id="@+id/signup_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -62,7 +62,7 @@
         app:layout_constraintVertical_bias="0.182" />
 
     <EditText
-        android:id="@+id/txt_password"
+        android:id="@+id/signup_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -86,8 +86,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-///main.java
+//main.java
 
 package com.example.signinactivity;
 
@@ -113,8 +112,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Signup_Username=(EditText)findViewById(R.id.txt_username);
-        Signup_Password=(EditText)findViewById(R.id.txt_password);
+        Signup_Username=(EditText)findViewById(R.id.signup_username);
+        Signup_Password=(EditText)findViewById(R.id.signup_password);
 
         btnSignup=(Button)findViewById(R.id.btn_signup);
         btnSignup.setOnClickListener(this);
@@ -150,8 +149,71 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 }
 
 
-//avtivity_login.java
+//login.java
 
+package com.example.signinactivity;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+public class Login extends AppCompatActivity implements View.OnClickListener {
+    EditText Login_Username, Login_Password;
+    Button btnLogin;
+    String user, pass;
+    int count = 0;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
+        Login_Username = (EditText) findViewById(R.id.login_username);
+        Login_Password = (EditText) findViewById(R.id.login_password);
+
+        btnLogin = (Button) findViewById(R.id.btn_login);
+        btnLogin.setOnClickListener(this);
+
+        Bundle bundle = getIntent().getBundleExtra("data");
+        user = bundle.getString("User");
+        pass = bundle.getString("Pwd");
+
+    }
+
+    public void onClick(View v)
+    {
+        String username = Login_Username.getText().toString();
+        String password = Login_Password.getText().toString();
+
+        Log.d("userid", username);
+        Log.d("Passwordreceived", password);
+
+        if (user.equals(username) && pass.equals(password))
+        {
+            Toast.makeText(this, "Login Successful", Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            count++;
+            if (count == 3)
+            {
+                btnLogin.setEnabled(false);
+                Toast.makeText(this, "Failed Login Attempts", Toast.LENGTH_LONG).show();
+            }
+            else
+            {
+                Toast.makeText(this, "Login Failed " + count, Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+}
+
+
+
+
+//login.xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -237,67 +299,3 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-//login.java
-
-package com.example.signinactivity;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-public class Login extends AppCompatActivity implements View.OnClickListener {
-    EditText Login_Username, Login_Password;
-    Button btnLogin;
-    String user, pass;
-    int count = 0;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-
-        Login_Username = (EditText) findViewById(R.id.login_username);
-        Login_Password = (EditText) findViewById(R.id.login_password);
-
-        btnLogin = (Button) findViewById(R.id.btn_login);
-        btnLogin.setOnClickListener(this);
-
-        Bundle bundle = getIntent().getBundleExtra("data");
-        user = bundle.getString("User");
-        pass = bundle.getString("Pwd");
-
-    }
-
-    public void onClick(View v)
-    {
-        String username = Login_Username.getText().toString();
-        String password = Login_Password.getText().toString();
-
-        Log.d("userid", username);
-        Log.d("Passwordreceived", password);
-
-        if (user.equals(username) && pass.equals(password))
-        {
-            Toast.makeText(this, "Login Successful", Toast.LENGTH_LONG).show();
-        }
-        else
-        {
-            count++;
-            if (count == 3)
-            {
-                btnLogin.setEnabled(false);
-                Toast.makeText(this, "Failed Login Attempts", Toast.LENGTH_LONG).show();
-            }
-            else
-            {
-                Toast.makeText(this, "Login Failed " + count, Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-}
-
-
-
